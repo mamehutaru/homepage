@@ -10,6 +10,9 @@ const topPanelWrapper = css({
   columnGap: "2px",
   rowGap: "2px",
   bg: "#000",
+  "& div": {
+    bg: "#fff",
+  },
 });
 
 const mainImagePanel = css({
@@ -75,7 +78,7 @@ const TopPanel = () => {
         </a>
       </div>
       <div className={titlePanel}>
-        <span>#7fffd4</span>
+        <span>#newestChange</span>
       </div>
     </div>
   );

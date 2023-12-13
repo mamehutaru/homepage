@@ -20,11 +20,11 @@ const folderImg = css({
   height: "auto",
 
   filter: "drop-shadow(4px 4px 0px #000)",
-  transition: "filter 0.2s",
   fill: "#fff",
   stroke: "#000",
   strokeWidth: "0.5px",
-  _hover: {
+  _active: {
+    color: "#7fffd4",
     filter: "drop-shadow(0px 0px 0px #000)",
   },
 });
@@ -42,11 +42,11 @@ const filePanel = css({
   aspectRatio: "1 / 1",
   margin: "auto",
   borderRadius: "0.5rem",
-  transition: "filter 0.2s",
   bg: "#fff",
   border: "2px solid #000",
   boxShadow: "4px 4px 0px #000",
-  _hover: {
+  _active: {
+    color: "#7fffd4",
     filter: "drop-shadow(0px 0px 0px #000)",
   },
 });

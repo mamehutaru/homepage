@@ -9,7 +9,7 @@ const navBar = css({
   borderBottom: "2px solid #000 ",
   overflowX: "auto",
   zIndex: "1",
-  bg: "#7fffd4",
+  bg: "#fff",
 });
 
 const navLink = css({
