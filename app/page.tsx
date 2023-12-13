@@ -1,10 +1,12 @@
-import FileSystemBoard from "@/app/_components/board/FileSystemBoard";
+import FileSystemBoard from "@/app/_components/fileManager/FileSystemBoard";
+import { SearchParams } from "@/app/lib/utils";
+import TopPanel from "./_components/topPanel";
 
-const page = () => {
+const page = ({ searchParams }: { searchParams: SearchParams }) => {
   return (
     <main>
-      mainpage
-      <FileSystemBoard />
+      <TopPanel />
+      <FileSystemBoard searchParams={searchParams} />
     </main>
   );
 };

@@ -8,12 +8,28 @@ const folderData: folderStructure[] = [
       {
         name: "日記",
         type: "file",
-        src: "",
+        src: "/",
       },
       {
         name: "ちゃんとした絵",
-        type: "file",
-        src: "",
+        type: "folder",
+        items: [
+          {
+            name: "ファンアート",
+            type: "file",
+            src: "/",
+          },
+          {
+            name: "オリジナル",
+            type: "file",
+            src: "/",
+          },
+          {
+            name: "その他",
+            type: "file",
+            src: "/",
+          },
+        ],
       },
     ],
   },
@@ -24,17 +40,40 @@ const folderData: folderStructure[] = [
       {
         name: "お散歩",
         type: "file",
-        src: "",
+        src: "/",
       },
       {
         name: "探訪",
         type: "folder",
-        //items: [],
+        items: [
+          {
+            name: "2020東扇島",
+            type: "folder",
+            items: [
+              {
+                name: "海岸",
+                type: "file",
+                src: "/",
+              },
+            ],
+          },
+          {
+            name: "2018奥多摩",
+            type: "folder",
+            items: [
+              {
+                name: "海岸",
+                type: "file",
+                src: "",
+              },
+            ],
+          },
+        ],
       },
       {
         name: "素手で持ち帰り男",
         type: "file",
-        src: "",
+        src: "/",
       },
     ],
   },
@@ -42,6 +81,36 @@ const folderData: folderStructure[] = [
     name: "オススメ",
     type: "folder",
     //items: [],
+  },
+  {
+    name: "長文のテストンゴニキメンスねぇ",
+    type: "folder",
+    items: [],
+  },
+  {
+    name: "テストンゴねぇ",
+    type: "folder",
+    items: [],
+  },
+  {
+    name: "テストンゴねぇ",
+    type: "folder",
+    items: [],
+  },
+  {
+    name: "長文のテストンゴニキメンスねぇ",
+    type: "folder",
+    items: [],
+  },
+  {
+    name: "長文のテストンゴニキメンスねぇ",
+    type: "folder",
+    items: [],
+  },
+  {
+    name: "テストンゴねぇ",
+    type: "folder",
+    items: [],
   },
 ];
 
