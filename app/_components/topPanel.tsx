@@ -12,7 +12,7 @@ const topPanelWrapper = css({
   rowGap: "2px",
   bg: "var(--theme-color)",
   "& div": {
-    bg: "var(--bg-color)",
+    //bg: "var(--bg-color)",
   },
 });
 
@@ -21,20 +21,24 @@ const mainImagePanel = css({
   gridRowEnd: "3",
   gridColumnStart: "1",
   gridColumnEnd: "1",
+  bg: "var(--bg-color)",
 });
 
-const switchPanel = css({});
+const switchPanel = css({ bg: "var(--bg-color)" });
 
 const linkPanel = css({
   gridRowStart: "3",
   gridRowEnd: "3",
   display: "flex",
+  bg: "var(--bg-color)",
 });
 
 const titlePanel = css({
   display: "flex",
   gridRowStart: "2",
   gridRowEnd: "4",
+  bg: "var(--bg-color)",
+  //bg: "var(--theme-color)",
 
   textAlign: "center",
   "& span": {
@@ -60,6 +64,12 @@ const linkIcon = css({
   fill: "var(--theme-color)",
 });
 
+const moon = css({
+  height: "50%",
+  margin: "auto",
+  filter: " opacity(25%)  drop-shadow(0px 0px 0px var(--theme-color))",
+});
+
 const TopPanel = () => {
   return (
     <div className={topPanelWrapper}>
@@ -78,7 +88,7 @@ const TopPanel = () => {
         </a>
       </div>
       <div className={titlePanel}>
-        <span>#newestChange</span>
+        <img src="/moonRotating.webp" className={moon} />
       </div>
     </div>
   );

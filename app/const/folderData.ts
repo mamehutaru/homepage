@@ -89,27 +89,27 @@ const folderData: folderStructure[] = [
     items: [],
   },
   {
-    name: "新しいフォルダ",
+    name: "新しいフォルダ(1)",
     type: "folder",
     items: [],
   },
   {
-    name: "新しいフォルダ",
+    name: "新しいフォルダ(2)",
     type: "folder",
     items: [],
   },
   {
-    name: "新しいフォルダ",
+    name: "新しいフォルダ(3)",
     type: "folder",
     items: [],
   },
   {
-    name: "新しいフォルダ",
+    name: "新しいフォルダ(4)",
     type: "folder",
     items: [],
   },
   {
-    name: "新しいフォルダ",
+    name: "新しいフォルダ(5)",
     type: "folder",
     items: [],
   },

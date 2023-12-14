@@ -4,23 +4,33 @@ export type SearchParams = {
   [key: string]: string | undefined;
 };
 
-//親子構造が示された配列を用いて，folderDataを探索．
-//結果として，親子構造内のもっとも下層の子の中身を返す再帰関数（天才）
+//pathを用いて，folderDataを探索して，現在のディレクトリの中身を返す再帰関数（天才）
 export const searchCurrentDirItems = (
-  dirNames: string[],
+  path: string,
   dir: FolderStructure[]
 ): FolderStructure[] | undefined => {
-  const currentDirName = dirNames[0]; //もっとも階層が上のディレクトリ
+  if (path === "") {
+    return dir;
+  }
+
+  //"_a_b_c"から"a"を抽出
+  const parts = path.split("_").filter(Boolean);
+  const currentDirName = parts[0];
+
+  //渡されたディレクトリ直下で，名前が"a"のディレクトリを探す
   const currentDir = dir.find((item) => item.name === currentDirName); //dirの中から，次のdirNameに一致するdirを探す
 
   if (!currentDir) {
     return undefined;
   }
 
-  if (dirNames.length === 1) {
+  //次の階層のディレクトリを探索するために"_a_b_c"を"_b_c"にする
+  const nextPath = parts.length !== 0 ? "_" + parts.slice(1).join("_") : "";
+
+  if (parts.length === 1) {
     //もっとも下層の子にたどり着いたら終了
-    return currentDir.items; //もっとも下層の子の中身を返す．
+    return currentDir.items;
   } else {
-    return searchCurrentDirItems(dirNames.slice(1), currentDir.items!); //再帰的処理
+    return searchCurrentDirItems(nextPath, currentDir.items!); //再帰的処理
   }
 };
