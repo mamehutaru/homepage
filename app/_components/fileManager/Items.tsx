@@ -10,23 +10,19 @@ type ItemsProps = {
 };
 
 const itemsWrapper = css({
-  //display: "block",
-  //flex: "0 0 calc(50% - 20px)center" /* 50% 幅で 20px の間隔を空ける */,
-  //backgroundColor: "#f00",
+  _hover: {
+    color: "#3cbac0",
+  },
 });
 
 const folderImg = css({
   width: "auto",
   height: "auto",
 
-  filter: "drop-shadow(4px 4px 0px #000)",
-  fill: "#fff",
-  stroke: "#000",
+  filter: "drop-shadow(4px 4px 0px var(--theme-color))",
+  fill: "var(--bg-color)",
+  stroke: "var(--theme-color)",
   strokeWidth: "0.5px",
-  _active: {
-    color: "#7fffd4",
-    filter: "drop-shadow(0px 0px 0px #000)",
-  },
 });
 
 const filePanelWrapper = css({
@@ -43,25 +39,20 @@ const filePanel = css({
   margin: "auto",
   borderRadius: "0.5rem",
   bg: "#fff",
-  border: "2px solid #000",
-  boxShadow: "4px 4px 0px #000",
-  _active: {
-    color: "#7fffd4",
-    filter: "drop-shadow(0px 0px 0px #000)",
-  },
+  border: "2px solid var(--theme-color)",
+  boxShadow: "4px 4px 0px var(--theme-color)",
 });
 
 const albumImg = css({
   width: "70%",
   height: "70%",
   margin: "auto",
-  fill: "#000",
+  fill: "var(--theme-color)",
 });
 
 const itemName = css({
   textAlign: "center",
   display: "block",
-  //bg: "cyan",
 });
 
 const Items = ({ dirItems, currentPath }: ItemsProps) => {
@@ -70,6 +61,7 @@ const Items = ({ dirItems, currentPath }: ItemsProps) => {
       <Link
         href={`/?dir=${currentPath}_${dirItems.name}`}
         className={itemsWrapper}
+        scroll={false}
       >
         <FolderSvg className={folderImg} />
 
@@ -79,7 +71,7 @@ const Items = ({ dirItems, currentPath }: ItemsProps) => {
   } else if (dirItems.src) {
     //フォルダじゃなくてファイルだった場合
     return (
-      <Link href={dirItems.src} className={itemsWrapper}>
+      <Link href={dirItems.src} className={itemsWrapper} scroll={false}>
         <div className={filePanelWrapper}>
           <div className={filePanel}>
             <AlbumSvg className={albumImg} />

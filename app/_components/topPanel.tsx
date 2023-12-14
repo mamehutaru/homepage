@@ -1,5 +1,6 @@
 import TwitterSvg from "@/public/twitterSvg";
 import { css } from "@/styled-system/css";
+import Link from "next/link";
 
 const topPanelWrapper = css({
   width: "100vw",
@@ -9,9 +10,9 @@ const topPanelWrapper = css({
   gridTemplateRows: "1fr 1fr 1fr",
   columnGap: "2px",
   rowGap: "2px",
-  bg: "#000",
+  bg: "var(--theme-color)",
   "& div": {
-    bg: "#fff",
+    bg: "var(--bg-color)",
   },
 });
 
@@ -20,25 +21,21 @@ const mainImagePanel = css({
   gridRowEnd: "3",
   gridColumnStart: "1",
   gridColumnEnd: "1",
-  bg: "#fff",
 });
 
-const switchPanel = css({
-  bg: "#7fffd4",
-});
+const switchPanel = css({});
 
 const linkPanel = css({
   gridRowStart: "3",
   gridRowEnd: "3",
   display: "flex",
-  bg: "#7fffd4",
 });
 
 const titlePanel = css({
   display: "flex",
   gridRowStart: "2",
   gridRowEnd: "4",
-  bg: "#7fffd4",
+
   textAlign: "center",
   "& span": {
     display: "block",
@@ -47,26 +44,29 @@ const titlePanel = css({
 });
 
 const linkItem = css({
-  display: "block",
+  display: "flex",
   aspectRatio: "1/1",
-  height: "50%",
-  //bg: "#f0f",
+  height: "40%",
+  border: "2px solid var(--theme-color)",
+  boxShadow: "2px 2px 0px 0px var(--theme-color)",
   margin: "auto",
+  borderRadius: "0.2rem",
 });
 
 const linkIcon = css({
-  //bg: "#f00",
-  height: "100%",
-  width: "100%",
-  fill: "#fff",
-  stroke: "#000",
+  height: "70%",
+  width: "70%",
+  margin: "auto",
+  fill: "var(--theme-color)",
 });
 
 const TopPanel = () => {
   return (
     <div className={topPanelWrapper}>
       <div className={mainImagePanel}>img</div>
-      <div className={switchPanel}>switch</div>
+      <div className={switchPanel}>
+        <Link href={{ pathname: "/", query: { mode: "dark" } }}>switch</Link>
+      </div>
       <div className={linkPanel}>
         <a
           target="_blank"

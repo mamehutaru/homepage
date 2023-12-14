@@ -6,8 +6,13 @@ import Items from "./Items";
 import Nav from "./Nav";
 import { css } from "@/styled-system/css";
 
+const containerWrapper = css({
+  width: "100vw",
+  minHeight: "100vh",
+});
+
 const itemsContainer = css({
-  margin: "5vw 15vw",
+  margin: "10vw 15vw",
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   columnGap: "10vw",
@@ -16,14 +21,16 @@ const itemsContainer = css({
 });
 
 const FileSystemBoard = ({ searchParams }: { searchParams: SearchParams }) => {
-  const currentPath = searchParams[Object.keys(searchParams)[0]]; //クエリパラメータを受け取る．
+  console.log(searchParams["mode"]);
+  const currentPath = searchParams["dir"]; //クエリパラメータを受け取る．
 
   if (currentPath === undefined) {
     //つまりルートなら
 
     return (
-      <div>
+      <div className={containerWrapper}>
         <Nav dirNames={[]} />
+
         <div className={itemsContainer}>
           {folderData.map((folder) => {
             return <Items dirItems={folder} currentPath={""} />;
@@ -37,7 +44,7 @@ const FileSystemBoard = ({ searchParams }: { searchParams: SearchParams }) => {
     const currentDirItems = searchCurrentDirItems(dirNames, folderData);
 
     return (
-      <div>
+      <div className={containerWrapper}>
         <Nav dirNames={dirNames} />
         <div className={itemsContainer}>
           {currentDirItems ? ( //中身あるなら

@@ -3,32 +3,23 @@ import { css } from "@/styled-system/css";
 
 const navBar = css({
   position: "sticky",
+  width: "100vw",
   top: "0",
   display: "flex",
-  borderTop: "2px  solid #000 ",
-  borderBottom: "2px solid #000 ",
+  borderTop: "2px  solid var(--theme-color) ",
+  borderBottom: "2px solid var(--theme-color) ",
   overflowX: "auto",
   zIndex: "1",
-  bg: "#fff",
+  bg: "var(--bg-color)",
 });
 
 const navLink = css({
-  //bg: "#ccf",
   margin: "1rem 1.5rem",
 });
 
 const linkText = css({
   textAlign: "center",
   whiteSpace: "nowrap",
-  //bg: "#fff",
-  // filter: "invert()",
-});
-
-const currentLinkText = css({
-  textAlign: "center",
-  whiteSpace: "nowrap",
-  bg: "#0f0",
-  borderRadius: "0.5rem",
 });
 
 type dirNamesProps = {
@@ -51,7 +42,7 @@ const Nav = ({ dirNames }: dirNamesProps) => {
   if (!dirNames) {
     return (
       <div className={navBar}>
-        <Link href="/" className={navLink}>
+        <Link href="/" className={navLink} scroll={false}>
           <span className={linkText}>_Storage</span>
         </Link>
       </div>
@@ -67,12 +58,12 @@ const Nav = ({ dirNames }: dirNamesProps) => {
 
   return (
     <div className={navBar}>
-      <Link href="/" className={navLink}>
+      <Link href="/" className={navLink} scroll={false}>
         _Storage
       </Link>
       {directories.map(({ name, path }) => {
         return (
-          <Link href={`?dir=${path}`} className={navLink}>
+          <Link href={`?dir=${path}`} className={navLink} scroll={false}>
             <span className={linkText}>_{name}</span>
           </Link>
         );
