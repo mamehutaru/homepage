@@ -1,13 +1,12 @@
-import folderData from "@/app/const/folderData";
-import FolderStructure from "@/app/lib/folderStructure";
 import { SearchParams, searchCurrentDirItems } from "@/app/lib/utils";
-import Nav from "./Nav";
 import { css } from "@/styled-system/css";
 import ItemsContainer from "./ItemsContainer";
+import NavTest from "./Navtest";
 
 const containerWrapper = css({
   width: "100vw",
   minHeight: "100vh",
+  bg: "var(--bg-color)",
 });
 
 const FileSystemBoard = ({ searchParams }: { searchParams: SearchParams }) => {
@@ -18,8 +17,10 @@ const FileSystemBoard = ({ searchParams }: { searchParams: SearchParams }) => {
 
   return (
     <div className={containerWrapper}>
-      <Nav dirNames={dirNames} />
-      <ItemsContainer searchParams={searchParams} />
+      <NavTest searchParams={searchParams} />
+      <div style={{ overflow: "hidden" }}>
+        <ItemsContainer searchParams={searchParams} />
+      </div>
     </div>
   );
 };

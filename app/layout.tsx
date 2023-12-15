@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_Antique } from "next/font/google";
 import "@/app/globals.css";
-import "@/app/variable.css";
 
 const zen = Zen_Kaku_Gothic_Antique({
   weight: "900",

@@ -1,6 +1,7 @@
 import TwitterSvg from "@/public/twitterSvg";
 import { css } from "@/styled-system/css";
-import Link from "next/link";
+import ThemeToggleButton from "./themeToggleButton";
+import { SearchParams } from "../lib/utils";
 
 const topPanelWrapper = css({
   width: "100vw",
@@ -24,7 +25,10 @@ const mainImagePanel = css({
   bg: "var(--bg-color)",
 });
 
-const switchPanel = css({ bg: "var(--bg-color)" });
+const switchPanel = css({
+  display: "flex",
+  bg: "var(--bg-color)",
+});
 
 const linkPanel = css({
   gridRowStart: "3",
@@ -37,10 +41,16 @@ const titlePanel = css({
   display: "flex",
   gridRowStart: "2",
   gridRowEnd: "4",
-  bg: "var(--bg-color)",
+  //bg: "var(--bg-color)",
   //bg: "var(--theme-color)",
-
   textAlign: "center",
+
+  //backgroundColor: "var(--bg-color)",
+  backgroundImage:
+    "linear-gradient(0deg, transparent 1rem, var(--theme-color) calc(1rem + 1px)), linear-gradient(90deg, var(--bg-color) 1rem, var(--theme-color) calc(1rem + 1px))",
+  backgroundSize: "calc(1rem + 1px) calc(1rem + 1px)",
+  backgroundPosition: "center center",
+
   "& span": {
     display: "block",
     margin: "auto",
@@ -55,6 +65,9 @@ const linkItem = css({
   boxShadow: "2px 2px 0px 0px var(--theme-color)",
   margin: "auto",
   borderRadius: "0.2rem",
+  _active: {
+    transform: "scale(0.9)",
+  },
 });
 
 const linkIcon = css({
@@ -67,15 +80,16 @@ const linkIcon = css({
 const moon = css({
   height: "50%",
   margin: "auto",
-  filter: " opacity(25%)  drop-shadow(0px 0px 0px var(--theme-color))",
+  filter:
+    " opacity(100%)  invert(var(--moon-invert)) drop-shadow(0px 0px 0px var(--theme-color))",
 });
 
-const TopPanel = () => {
+const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
   return (
     <div className={topPanelWrapper}>
       <div className={mainImagePanel}>img</div>
       <div className={switchPanel}>
-        <Link href={{ pathname: "/", query: { mode: "dark" } }}>switch</Link>
+        <ThemeToggleButton searchParams={searchParams} />
       </div>
       <div className={linkPanel}>
         <a

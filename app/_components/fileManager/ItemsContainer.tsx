@@ -60,6 +60,8 @@ const itemName = css({
   display: "block",
 });
 
+const paramDelimiter = "&";
+
 const ItemsContainer = ({ searchParams }: { searchParams: SearchParams }) => {
   const currentPath = searchParams["dir"] || ""; //dirクエリパラメータを受け取る．("_a_b_c")
 
@@ -75,12 +77,9 @@ const ItemsContainer = ({ searchParams }: { searchParams: SearchParams }) => {
         if (item.type === "folder") {
           return (
             <Link
-              href={{
-                pathname: "/",
-                query: {
-                  dir: `${currentPath}_${item.name}`,
-                },
-              }}
+              href={`?dir=${currentPath}_${item.name}${
+                searchParams["theme"] ? "&theme=" + searchParams["theme"] : ""
+              }`}
               className={itemWrapper}
               scroll={false}
             >
@@ -92,7 +91,13 @@ const ItemsContainer = ({ searchParams }: { searchParams: SearchParams }) => {
         } else if (item.src) {
           //フォルダじゃなくてファイルだった場合
           return (
-            <Link href={item.src} className={itemWrapper} scroll={false}>
+            <Link
+              href={`${item.src}?${
+                searchParams["theme"] ? "&theme=" + searchParams["theme"] : ""
+              }`}
+              className={itemWrapper}
+              scroll={false}
+            >
               <div className={filePanelWrapper}>
                 <div className={filePanel}>
                   <AlbumSvg className={albumImg} />

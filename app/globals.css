@@ -3,8 +3,6 @@ body {
   -webkit-text-size-adjust: 100%;
   padding: 0;
   margin: 0;
-  background: var(--bg-color);
-  color: var(--theme-color);
   animation: fadeIn 1s ease 0s 1 normal;
 }
 @layer reset, base, tokens, recipes, utilities;
