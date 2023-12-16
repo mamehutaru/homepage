@@ -1,7 +1,14 @@
 import TwitterSvg from "@/public/twitterSvg";
 import { css } from "@/styled-system/css";
-import ThemeToggleButton from "./themeToggleButton";
+import ThemeToggleMoon from "./themeToggleButton";
 import { SearchParams } from "../lib/utils";
+import { Montserrat } from "next/font/google";
+
+const montserratItalic = Montserrat({
+  weight: "900",
+  style: "italic",
+  subsets: ["latin-ext"],
+});
 
 const topPanelWrapper = css({
   width: "100vw",
@@ -23,38 +30,56 @@ const mainImagePanel = css({
   gridColumnStart: "1",
   gridColumnEnd: "1",
   bg: "var(--bg-color)",
+  overflow: "hidden",
+  "& span": {
+    display: "block",
+    fontStyle: "italic",
+    fontSize: "30vw",
+    whiteSpace: "nowrap",
+    marginLeft: "-8vw",
+    marginTop: "-12vw",
+  },
 });
 
-const switchPanel = css({
+const decorationPanel = css({
   display: "flex",
   bg: "var(--bg-color)",
+  overflow: "hidden",
+  "& div": {
+    display: "block",
+    margin: "auto",
+    "& span": {
+      display: "block",
+      fontStyle: "italic",
+      fontSize: "10vw",
+      whiteSpace: "nowrap",
+      color: "var(--bg-color)",
+      textShadow: "2px 2px var(--theme-color)",
+      transform: "scaleY(0.5)",
+      margin: "-11vw",
+    },
+  },
 });
 
 const linkPanel = css({
   gridRowStart: "3",
   gridRowEnd: "3",
   display: "flex",
-  bg: "var(--bg-color)",
+  backgroundImage: "radial-gradient(var(--theme-color) 1px, var(--bg-color) 0)",
+  backgroundSize: "1rem 1rem",
+  backgroundPosition: "center center",
 });
 
-const titlePanel = css({
+const themeTogglePanel = css({
   display: "flex",
   gridRowStart: "2",
   gridRowEnd: "4",
-  //bg: "var(--bg-color)",
-  //bg: "var(--theme-color)",
   textAlign: "center",
 
-  //backgroundColor: "var(--bg-color)",
   backgroundImage:
     "linear-gradient(0deg, transparent 1rem, var(--theme-color) calc(1rem + 1px)), linear-gradient(90deg, var(--bg-color) 1rem, var(--theme-color) calc(1rem + 1px))",
   backgroundSize: "calc(1rem + 1px) calc(1rem + 1px)",
   backgroundPosition: "center center",
-
-  "& span": {
-    display: "block",
-    margin: "auto",
-  },
 });
 
 const linkItem = css({
@@ -65,6 +90,7 @@ const linkItem = css({
   boxShadow: "2px 2px 0px 0px var(--theme-color)",
   margin: "auto",
   borderRadius: "0.2rem",
+  bg: "var(--bg-color)",
   _active: {
     transform: "scale(0.9)",
   },
@@ -77,20 +103,21 @@ const linkIcon = css({
   fill: "var(--theme-color)",
 });
 
-const moon = css({
-  height: "50%",
-  margin: "auto",
-  filter:
-    " opacity(100%)  invert(var(--moon-invert)) drop-shadow(0px 0px 0px var(--theme-color))",
-});
-
 const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
   return (
     <div className={topPanelWrapper}>
-      <div className={mainImagePanel}>img</div>
-      <div className={switchPanel}>
-        <ThemeToggleButton searchParams={searchParams} />
+      <div className={mainImagePanel}>
+        <span>冥界</span>
       </div>
+
+      <div className={decorationPanel}>
+        <div className={montserratItalic.className}>
+          <span>@LivLA</span>
+          <span>@LivLA</span>
+          <span>@LivLA</span>
+        </div>
+      </div>
+
       <div className={linkPanel}>
         <a
           target="_blank"
@@ -101,8 +128,9 @@ const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
           <TwitterSvg className={linkIcon} />
         </a>
       </div>
-      <div className={titlePanel}>
-        <img src="/moonRotating.webp" className={moon} />
+
+      <div className={themeTogglePanel}>
+        <ThemeToggleMoon searchParams={searchParams} />
       </div>
     </div>
   );

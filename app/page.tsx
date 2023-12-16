@@ -1,7 +1,6 @@
 import FileSystemPanel from "@/app/_components/fileManager/FileSystemPanel";
 import { SearchParams } from "@/app/lib/utils";
-import TopPanel from "./_components/topPanel";
-//import "@/app/variable.css";
+import TopPanel from "@/app/_components/topPanel";
 import { css } from "@/styled-system/css";
 
 const page = ({ searchParams }: { searchParams: SearchParams }) => {

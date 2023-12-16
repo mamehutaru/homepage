@@ -1,33 +1,26 @@
 import Link from "next/link";
 import { SearchParams } from "../lib/utils";
 import { css } from "@/styled-system/css";
+import Image from "next/image";
 
-const ThemeToggleButton = ({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) => {
-  const toggleButton = css({
-    display: "flex",
-    width: "40%",
-    height: "40%",
+const ThemeToggleMoon = ({ searchParams }: { searchParams: SearchParams }) => {
+  const moonWrapper = css({
+    display: "block",
+    height: "50%",
+    aspectRatio: "1/1",
     margin: "auto",
-    borderRadius: "0.2rem",
-    border: "2px solid var(--theme-color)",
-    boxShadow: "2px 2px 0px 0px var(--theme-color)",
-    "& div": {
-      height: "calc(100% - 10px)",
-      aspectRatio: "1/1",
-      bg: "var(--theme-color)",
-      margin:
-        searchParams["theme"] === "dark"
-          ? "auto 5px auto auto "
-          : "auto auto auto 5px",
-      borderRadius: "0.2rem",
-    },
+    position: "relative",
+
     _active: {
       transform: "scale(0.9)",
     },
+  });
+
+  const moon = css({
+    filter:
+      " opacity(100%)  invert(var(--moon-invert)) drop-shadow(0px 0px 0px var(--theme-color))",
+    height: "100%",
+    width: "100%",
   });
 
   return (
@@ -35,11 +28,18 @@ const ThemeToggleButton = ({
       href={`?${searchParams["dir"] ? "&dir=" + searchParams["dir"] : ""}${
         searchParams["theme"] === "dark" ? "" : "&theme=" + "dark"
       }`}
-      className={toggleButton}
+      replace
+      scroll={false}
+      className={moonWrapper}
     >
-      <div></div>
+      <Image
+        src="/moonRotating.webp"
+        alt={"rotating moon"}
+        fill
+        className={moon}
+      />
     </Link>
   );
 };
 
-export default ThemeToggleButton;
+export default ThemeToggleMoon;

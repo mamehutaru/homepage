@@ -8,7 +8,7 @@ const folderData: folderStructure[] = [
       {
         name: "日記",
         type: "file",
-        src: "/",
+        src: "/gallery/diary",
       },
       {
         name: "ちゃんとした絵",

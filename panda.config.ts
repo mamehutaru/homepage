@@ -7,6 +7,7 @@ export default defineConfig({
   // Where to look for your css declarations
   include: [
     "./app/_components/**/*.{ts,tsx,js,jsx}",
+    "./app/gallery/**/*.{ts,tsx,js,jsx}",
     "./app/**/*.{ts,tsx,js,jsx}",
     //"./app/_components/board/**/*.{ts,tsx,js,jsx}",
   ],
