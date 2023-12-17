@@ -3,28 +3,46 @@ import { SearchParams } from "@/app/lib/utils";
 import { css } from "@/styled-system/css";
 import Image from "next/image";
 import Link from "next/link";
-import diary from "@/app/const/gallery/diary";
+import index from "@/app/const/gallery";
 
 const photo = css({
   width: "100%",
   height: "100%",
   objectFit: "cover",
+  _active: {
+    objectFit: "contain",
+  },
 });
 
 const container = css({
   width: "100%",
   display: "grid",
-  gap: "1vw",
+  gap: "2px",
   //bg: "#e8579a",
-  gridTemplateColumns: "1fr 1fr",
+  gridTemplateColumns: [
+    "1fr 1fr",
+    "1fr 1fr",
+    "1fr 1fr 1fr",
+    "1fr 1fr 1fr 1fr",
+    "1fr 1fr 1fr 1fr ",
+  ],
 });
 
 const imageWrapper = css({
   width: "100%",
   aspectRatio: "1/1",
   overflow: "hidden",
-  //borderRadius: "1rem",
-  //background: "#f00",
+});
+
+const backButton = css({
+  display: "block",
+  fontSize: "2rem",
+  position: "fixed",
+  bottom: "1rem",
+  right: "1rem",
+  color: "#eee",
+  zIndex: "3",
+  textShadow: "0px 0px 5px #222",
 });
 
 const page = ({
@@ -34,26 +52,43 @@ const page = ({
   params: { id: string };
   searchParams: SearchParams;
 }) => {
-  console.log(diary);
+  const imageFolder = index.find((item) => item.folderId === params.id);
+  const imageData = imageFolder?.data;
+  console.log(imageData);
 
   return (
-    <main style={{ backgroundColor: "#000", minHeight: "100vh" }}>
+    <main
+      style={{
+        backgroundColor: "#212121",
+        minHeight: "100vh",
+        backgroundImage:
+          "linear-gradient(0deg, transparent 1rem, #444 calc(1rem + 1px)), linear-gradient(90deg, #212121 1rem, #444 calc(1rem + 1px))",
+        backgroundSize: "calc(1rem + 1px) calc(1rem + 1px)",
+        backgroundPosition: "center center",
+      }}
+    >
       <div className={container}>
-        {diary.map((image) => {
+        {imageData?.map((image) => {
           return (
-            <div className={imageWrapper}>
+            <Link
+              className={imageWrapper}
+              href={`/gallery/${params.id}/${image.src}`}
+            >
               <Image
-                src={image.src}
-                width="800"
-                height="800"
+                src={`${process.env.STORAGE_URL}/${params.id}/${image.src}`}
+                width={720}
+                height={480}
                 alt=""
+                placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMU7QQAALkAoBhb83IAAAAASUVORK5CYII="
                 className={photo}
               />
-            </div>
+            </Link>
           );
         })}
       </div>
-      <Link href="/">戻る</Link>
+      <Link href={`/`} className={backButton}>
+        /BACK
+      </Link>
     </main>
   );
 };

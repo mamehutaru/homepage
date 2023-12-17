@@ -7,29 +7,13 @@ const folderData: folderStructure[] = [
     items: [
       {
         name: "日記",
-        type: "file",
+        type: "img",
         src: "/gallery/diary",
       },
       {
         name: "ちゃんとした絵",
         type: "folder",
-        items: [
-          {
-            name: "ファンアート",
-            type: "file",
-            src: "/",
-          },
-          {
-            name: "オリジナル",
-            type: "file",
-            src: "/",
-          },
-          {
-            name: "その他",
-            type: "file",
-            src: "/",
-          },
-        ],
+        items: [],
       },
     ],
   },
@@ -38,49 +22,27 @@ const folderData: folderStructure[] = [
     type: "folder",
     items: [
       {
-        name: "お散歩",
-        type: "file",
-        src: "/",
-      },
-      {
         name: "探訪",
         type: "folder",
-        items: [
-          {
-            name: "2020東扇島",
-            type: "folder",
-            items: [
-              {
-                name: "海岸",
-                type: "file",
-                src: "/",
-              },
-            ],
-          },
-          {
-            name: "2018奥多摩",
-            type: "folder",
-            items: [
-              {
-                name: "海岸",
-                type: "file",
-                src: "",
-              },
-            ],
-          },
-        ],
+        items: [],
       },
       {
         name: "素手で持ち帰り男",
-        type: "file",
-        src: "/",
+        type: "img",
+        src: "/gallery/fogot-my-bag",
       },
     ],
   },
   {
     name: "オススメ",
     type: "folder",
-    //items: [],
+    items: [
+      {
+        name: "tanatrium",
+        type: "url",
+        src: "https://tanatrium.net/",
+      },
+    ],
   },
 
   {
@@ -89,29 +51,25 @@ const folderData: folderStructure[] = [
     items: [],
   },
   {
-    name: "新しいフォルダ(1)",
+    name: "新しいフォルダ（1）",
     type: "folder",
     items: [],
   },
   {
-    name: "新しいフォルダ(2)",
+    name: "新しいフォルダ（2）",
     type: "folder",
-    items: [],
+    items: [
+      {
+        name: "ムホホ...w",
+        type: "url",
+        src: "/",
+      },
+    ],
   },
   {
-    name: "新しいフォルダ(3)",
-    type: "folder",
-    items: [],
-  },
-  {
-    name: "新しいフォルダ(4)",
-    type: "folder",
-    items: [],
-  },
-  {
-    name: "新しいフォルダ(5)",
-    type: "folder",
-    items: [],
+    name: "README",
+    type: "txt",
+    src: "/",
   },
 ];
 

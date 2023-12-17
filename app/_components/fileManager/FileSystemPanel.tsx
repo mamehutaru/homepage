@@ -4,7 +4,8 @@ import ItemsContainer from "./ItemsContainer";
 import NavTest from "./Navtest";
 
 const containerWrapper = css({
-  width: "100vw",
+  display: "block",
+  width: "100%",
   minHeight: "100vh",
   bg: "var(--bg-color)",
 });

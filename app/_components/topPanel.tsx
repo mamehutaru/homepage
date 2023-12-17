@@ -3,6 +3,7 @@ import { css } from "@/styled-system/css";
 import ThemeToggleMoon from "./themeToggleButton";
 import { SearchParams } from "../lib/utils";
 import { Montserrat } from "next/font/google";
+import RonaldSvg from "@/public/ronaldSvg";
 
 const montserratItalic = Montserrat({
   weight: "900",
@@ -11,7 +12,7 @@ const montserratItalic = Montserrat({
 });
 
 const topPanelWrapper = css({
-  width: "100vw",
+  width: "100%",
   aspectRatio: "4 / 3",
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
@@ -45,19 +46,11 @@ const decorationPanel = css({
   display: "flex",
   bg: "var(--bg-color)",
   overflow: "hidden",
-  "& div": {
-    display: "block",
+  "& svg": {
+    width: "auto",
+    height: "95%",
+    fill: "var(--theme-color)",
     margin: "auto",
-    "& span": {
-      display: "block",
-      fontStyle: "italic",
-      fontSize: "10vw",
-      whiteSpace: "nowrap",
-      color: "var(--bg-color)",
-      textShadow: "2px 2px var(--theme-color)",
-      transform: "scaleY(0.5)",
-      margin: "-11vw",
-    },
   },
 });
 
@@ -66,7 +59,7 @@ const linkPanel = css({
   gridRowEnd: "3",
   display: "flex",
   backgroundImage: "radial-gradient(var(--theme-color) 1px, var(--bg-color) 0)",
-  backgroundSize: "1rem 1rem",
+  backgroundSize: "0.8rem 0.8rem",
   backgroundPosition: "center center",
 });
 
@@ -86,8 +79,8 @@ const linkItem = css({
   display: "flex",
   aspectRatio: "1/1",
   height: "40%",
-  border: "2px solid var(--theme-color)",
-  boxShadow: "2px 2px 0px 0px var(--theme-color)",
+  border: "0.1rem solid var(--theme-color)",
+  boxShadow: "0.15rem 0.15rem 0px 0px var(--theme-color)",
   margin: "auto",
   borderRadius: "0.2rem",
   bg: "var(--bg-color)",
@@ -111,11 +104,7 @@ const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
       </div>
 
       <div className={decorationPanel}>
-        <div className={montserratItalic.className}>
-          <span>@LivLA</span>
-          <span>@LivLA</span>
-          <span>@LivLA</span>
-        </div>
+        <RonaldSvg />
       </div>
 
       <div className={linkPanel}>

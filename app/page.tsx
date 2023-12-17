@@ -3,6 +3,13 @@ import { SearchParams } from "@/app/lib/utils";
 import TopPanel from "@/app/_components/topPanel";
 import { css } from "@/styled-system/css";
 
+const responsivePanel = css({
+  display: "grid",
+  gridTemplateRows: "auto, auto",
+  xl: { gridTemplateColumns: "100% 1fr", gridTemplateRows: "1fr" },
+  "2xl": { gridTemplateColumns: "100vh, 1fr", gridTemplateRows: "1fr" },
+});
+
 const page = ({ searchParams }: { searchParams: SearchParams }) => {
   const theme = css({
     "--bg-color": searchParams["theme"] === "dark" ? "#212121" : "white",
@@ -16,7 +23,7 @@ const page = ({ searchParams }: { searchParams: SearchParams }) => {
   });
 
   return (
-    <main className={theme}>
+    <main className={`${theme} `}>
       <TopPanel searchParams={searchParams} />
       <FileSystemPanel searchParams={searchParams} />
     </main>

@@ -1,6 +1,6 @@
 type FolderStructure = {
   name: string;
-  type: "folder" | "file";
+  type: "folder" | "img" | "txt" | "url";
   items?: FolderStructure[];
   src?: string;
 };

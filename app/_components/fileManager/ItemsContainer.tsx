@@ -1,14 +1,25 @@
 import Link from "next/link";
 import FolderSvg from "@/public/folderSvg";
 import { css } from "@/styled-system/css";
-import AlbumSvg from "@/public/albumSvg";
 import { SearchParams, searchCurrentDirItems } from "@/app/lib/utils";
 import folderData from "@/app/const/folderData";
+import { Oswald } from "next/font/google";
+const oswald = Oswald({
+  weight: "700",
+  style: "normal",
+  subsets: ["latin-ext"],
+});
 
 const itemsContainer = css({
   margin: "10vw 15vw",
   display: "grid",
-  gridTemplateColumns: "1fr 1fr",
+  gridTemplateColumns: [
+    "1fr 1fr",
+    "1fr 1fr",
+    "1fr 1fr 1fr",
+    "1fr 1fr 1fr 1fr",
+    " 1fr 1fr 1fr 1fr",
+  ],
   columnGap: "10vw",
   rowGap: "10vw",
   //bg: "#0f0",
@@ -24,7 +35,7 @@ const folderImg = css({
   width: "auto",
   height: "auto",
 
-  filter: "drop-shadow(4px 4px 0px var(--theme-color))",
+  filter: "drop-shadow(0.3rem 0.3rem 0px var(--theme-color))",
   fill: "var(--bg-color)",
   stroke: "var(--theme-color)",
   strokeWidth: "0.5px",
@@ -34,7 +45,6 @@ const filePanelWrapper = css({
   display: "flex",
   width: "100%",
   aspectRatio: "1 / 1",
-  //bg: "#cfc",
 });
 
 const filePanel = css({
@@ -44,15 +54,14 @@ const filePanel = css({
   margin: "auto",
   borderRadius: "0.5rem",
   bg: "var(--bg-color)",
-  border: "2px solid var(--theme-color)",
-  boxShadow: "4px 4px 0px var(--theme-color)",
+  border: "0.2rem solid var(--theme-color)",
+  boxShadow: "0.3rem 0.3rem 0px var(--theme-color)",
 });
 
-const albumImg = css({
-  width: "70%",
-  height: "70%",
+const coverText = css({
+  display: "block",
   margin: "auto",
-  fill: "var(--theme-color)",
+  fontSize: "2rem",
 });
 
 const itemName = css({
@@ -96,11 +105,13 @@ const ItemsContainer = ({ searchParams }: { searchParams: SearchParams }) => {
                 searchParams["theme"] ? "&theme=" + searchParams["theme"] : ""
               }`}
               className={itemWrapper}
-              scroll={false}
+              target={item.type === "url" ? "_blank" : "_self"}
             >
               <div className={filePanelWrapper}>
                 <div className={filePanel}>
-                  <AlbumSvg className={albumImg} />
+                  <span className={`${coverText} ${oswald.className}`}>
+                    .{item.type}
+                  </span>
                 </div>
               </div>
               <span className={itemName}>{item.name}</span>
