@@ -2,12 +2,19 @@ import FileSystemPanel from "@/app/_components/fileManager/FileSystemPanel";
 import { SearchParams } from "@/app/lib/utils";
 import TopPanel from "@/app/_components/topPanel";
 import { css } from "@/styled-system/css";
+import Link from "next/link";
+import ThemeToggleMoon from "./_components/themeToggleButton";
+import ThemeToggleButton from "./_components/themeToggleButton";
 
 const responsivePanel = css({
   display: "grid",
   gridTemplateRows: "auto, auto",
   xl: { gridTemplateColumns: "100% 1fr", gridTemplateRows: "1fr" },
   "2xl": { gridTemplateColumns: "100vh, 1fr", gridTemplateRows: "1fr" },
+});
+
+const responsiveHide = css({
+  display: ["none", "none", "none", "block", "block", "block"],
 });
 
 const page = ({ searchParams }: { searchParams: SearchParams }) => {
@@ -22,10 +29,25 @@ const page = ({ searchParams }: { searchParams: SearchParams }) => {
     //overflow: "hidden",
   });
 
+  const backButton = css({
+    //display: "block",
+    fontSize: "2rem",
+    fontStyle: "italic",
+    position: "fixed",
+    bottom: "1.5rem",
+    right: "1.5rem",
+    color: "var(--theme-color)",
+    zIndex: "3",
+  });
+
   return (
-    <main className={`${theme} `}>
+    <main className={`${theme}`}>
       <TopPanel searchParams={searchParams} />
       <FileSystemPanel searchParams={searchParams} />
+      <div className={` ${responsiveHide} ${backButton}`}>
+        <Link href={`/`}>冥界</Link>
+        <ThemeToggleButton searchParams={searchParams} />
+      </div>
     </main>
   );
 };

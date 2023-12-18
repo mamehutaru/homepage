@@ -55,12 +55,13 @@ const imageItem = css({
 const backButton = css({
   display: "block",
   fontSize: "2rem",
+  fontStyle: "italic",
   position: "fixed",
-  bottom: "1rem",
-  right: "1rem",
+  bottom: "1.5rem",
+  right: "1.5rem",
   color: "#eee",
   zIndex: "3",
-  textShadow: "0px 0px 5px #222",
+  textShadow: "0px 0px 4px #222",
 });
 
 const page = async ({
@@ -73,8 +74,6 @@ const page = async ({
   const imageFolder = index.find((item) => item.folderId === params.id);
   const imageData = imageFolder?.data;
   const currentImage = imageData?.find((item) => item.src === params.highRes);
-
-  console.log(params);
 
   return (
     <main className={pageWrapper}>
@@ -94,8 +93,8 @@ const page = async ({
           {currentImage?.caption}
         </section>
       </div>
-      <Link href={`/gallery/${params.id}`} className={backButton}>
-        /BACK
+      <Link href={`/`} className={backButton}>
+        冥界
       </Link>
     </main>
   );

@@ -60,16 +60,16 @@ const folderData: folderStructure[] = [
     type: "folder",
     items: [
       {
-        name: "ムホホ...w",
+        name: "ムホホ",
         type: "url",
-        src: "/",
+        src: "https://book.dmm.co.jp/product/4049349/s011akamj00497/?i3_ref=list&i3_ord=10&dmmref=a_List_commonList",
       },
     ],
   },
   {
     name: "README",
     type: "txt",
-    src: "/",
+    src: "/readme-page",
   },
 ];
 

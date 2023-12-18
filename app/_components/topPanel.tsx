@@ -96,9 +96,13 @@ const linkIcon = css({
   fill: "var(--theme-color)",
 });
 
+const responsiveHide = css({
+  display: [undefined, undefined, undefined, "none", "none"],
+});
+
 const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
   return (
-    <div className={topPanelWrapper}>
+    <div className={`${topPanelWrapper} ${responsiveHide}`}>
       <div className={mainImagePanel}>
         <span>冥界</span>
       </div>

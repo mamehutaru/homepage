@@ -54,8 +54,8 @@ const filePanel = css({
   margin: "auto",
   borderRadius: "0.5rem",
   bg: "var(--bg-color)",
-  border: "0.2rem solid var(--theme-color)",
-  boxShadow: "0.3rem 0.3rem 0px var(--theme-color)",
+  border: "0.15rem solid var(--theme-color)",
+  boxShadow: "0.25rem 0.25rem 0px var(--theme-color)",
 });
 
 const coverText = css({

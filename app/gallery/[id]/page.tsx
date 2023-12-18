@@ -37,12 +37,13 @@ const imageWrapper = css({
 const backButton = css({
   display: "block",
   fontSize: "2rem",
+  fontStyle: "italic",
   position: "fixed",
-  bottom: "1rem",
-  right: "1rem",
+  bottom: "1.5rem",
+  right: "1.5rem",
   color: "#eee",
   zIndex: "3",
-  textShadow: "0px 0px 5px #222",
+  textShadow: "0px 0px 4px #212121",
 });
 
 const page = ({
@@ -87,7 +88,7 @@ const page = ({
         })}
       </div>
       <Link href={`/`} className={backButton}>
-        /BACK
+        冥界
       </Link>
     </main>
   );

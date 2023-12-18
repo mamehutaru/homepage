@@ -6,34 +6,19 @@ type imageData = {
 
 const diary: imageData[] = [
   {
-    title: "11/1",
-    caption: "携帯",
+    title: "11月の日記#1",
     src: "D_20231101.webp",
   },
   {
-    title: "cmc",
-    caption: "テスト",
-    src: "logo1.webp",
-  },
-  {
-    title: "11/2",
-    caption: "はらこわし",
+    title: "11月の日記#2",
+    caption:
+      "紅棗（ナツメ）に切れ込みを入れ，その中にクルミを挟んだお菓子です．そもそもあんまりおいしくない．",
     src: "D_20231102.webp",
   },
   {
-    title: "らくがき",
-    caption: "テスト",
-    src: "FgOLLuaYAAP2Af.webp",
-  },
-  {
-    title: "12/1",
+    title: "12月の日記#1",
     caption: "風邪",
     src: "D_20231201.webp",
-  },
-  {
-    title: "11/1",
-    caption: "テスト",
-    src: "dadiekds.webp",
   },
 ];
 

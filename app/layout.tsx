@@ -9,12 +9,6 @@ const zen = Zen_Kaku_Gothic_Antique({
   subsets: ["latin-ext"],
 });
 
-const montserratItalic = Montserrat({
-  weight: "900",
-  style: "italic",
-  subsets: ["latin-ext"],
-});
-
 const responsiveFontSize = css({
   //fontSize: ["100%", "200%", "200%", "350%", "400%"],
 });

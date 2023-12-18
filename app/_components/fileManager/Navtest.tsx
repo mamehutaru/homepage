@@ -4,7 +4,7 @@ import { SearchParams } from "@/app/lib/utils";
 
 const navBar = css({
   position: "sticky",
-  width: "100vw",
+  width: "100%",
   top: "0",
   display: "flex",
   borderTop: "2px  solid var(--theme-color) ",

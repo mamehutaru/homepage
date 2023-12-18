@@ -5,7 +5,7 @@ import NavTest from "./Navtest";
 
 const containerWrapper = css({
   display: "block",
-  width: "100%",
+  width: "auto",
   minHeight: "100vh",
   bg: "var(--bg-color)",
 });
