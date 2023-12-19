@@ -4,6 +4,7 @@ import ThemeToggleMoon from "./themeToggleButton";
 import { SearchParams } from "../lib/utils";
 import { Montserrat } from "next/font/google";
 import RonaldSvg from "@/public/ronaldSvg";
+import Image from "next/image";
 
 const montserratItalic = Montserrat({
   weight: "900",
@@ -26,12 +27,14 @@ const topPanelWrapper = css({
 });
 
 const mainImagePanel = css({
+  position: "relative",
   gridRowStart: "1",
   gridRowEnd: "3",
   gridColumnStart: "1",
   gridColumnEnd: "1",
   bg: "var(--bg-color)",
   overflow: "hidden",
+  height: "100%",
   "& span": {
     display: "block",
     fontStyle: "italic",
@@ -100,11 +103,36 @@ const responsiveHide = css({
   display: [undefined, undefined, undefined, "none", "none"],
 });
 
+const kawaiiImage = css({
+  zIndex: "2",
+  position: "absolute",
+  top: "auto",
+  bottom: "0px",
+  width: "100%",
+  height: "auto",
+  maskImage: "linear-gradient(black, transparent)" /* プレフィックス付き */,
+  WebkitMaskImage: "linear-gradient(black, transparent)",
+});
+
+const imageMask = css({
+  maskImage: "url('/mainImage.webp')",
+  maskSize: "cover",
+  maskMode: "luminance",
+  maskPosition: "bottom",
+});
+
 const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
   return (
     <div className={`${topPanelWrapper} ${responsiveHide}`}>
-      <div className={mainImagePanel}>
+      <div className={`${mainImagePanel} ${imageMask}`}>
         <span>冥界</span>
+        {/*<Image
+          src="/mainImage.webp"
+          alt=""
+          width={600}
+          height={600}
+          className={kawaiiImage}
+  />*/}
       </div>
 
       <div className={decorationPanel}>

@@ -5,8 +5,8 @@ const RonaldSvg = (
     xmlns="http://www.w3.org/2000/svg"
     version="1.2"
     baseProfile="tiny"
-    width="auto"
-    height="auto"
+    width="84"
+    height="84"
     viewBox="0.00 0.00 205.00 154.00"
     {...props}
   >

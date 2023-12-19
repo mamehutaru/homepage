@@ -32,7 +32,7 @@ const itemWrapper = css({
 });
 
 const folderImg = css({
-  width: "auto",
+  width: "100%",
   height: "auto",
 
   filter: "drop-shadow(0.3rem 0.3rem 0px var(--theme-color))",
