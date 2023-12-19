@@ -115,10 +115,7 @@ const imageMask = css({
 const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
   return (
     <div className={`${topPanelWrapper} ${responsiveHide}`}>
-      <div
-        className={`${mainImagePanel} ${imageMask}`}
-        style={{ WebkitMaskMode: "luminance" }}
-      >
+      <div className={`${mainImagePanel} ${imageMask} specialMask`}>
         <span>冥界</span>
       </div>
 

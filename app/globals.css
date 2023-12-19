@@ -5,6 +5,12 @@ body {
   margin: 0;
   /*animation: fadeIn 1s ease 0s 1 normal;*/
 }
+
+.specialMask {
+  -webkit-mask-mode: "luminance";
+  mask-mode: "luminance";
+}
+
 @layer reset, base, tokens, recipes, utilities;
 
 @keyframes fadeIn {
