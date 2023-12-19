@@ -11,11 +11,6 @@ const containerWrapper = css({
 });
 
 const FileSystemBoard = ({ searchParams }: { searchParams: SearchParams }) => {
-  const currentPath = searchParams["dir"] || ""; //dirクエリパラメータを受け取る．("_a_b_c")
-
-  //Navを修正したら消す
-  const dirNames = currentPath.split("_").filter(Boolean);
-
   return (
     <div className={containerWrapper}>
       <NavTest searchParams={searchParams} />

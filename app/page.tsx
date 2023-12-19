@@ -3,7 +3,6 @@ import { SearchParams } from "@/app/lib/utils";
 import TopPanel from "@/app/_components/topPanel";
 import { css } from "@/styled-system/css";
 import Link from "next/link";
-import ThemeToggleMoon from "./_components/themeToggleButton";
 import ThemeToggleButton from "./_components/themeToggleButton";
 
 const responsivePanel = css({

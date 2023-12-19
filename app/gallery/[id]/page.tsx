@@ -1,4 +1,3 @@
-//"use client";
 import { SearchParams } from "@/app/lib/utils";
 import { css } from "@/styled-system/css";
 import Image from "next/image";
