@@ -39,13 +39,7 @@ const page = ({ searchParams }: { searchParams: SearchParams }) => {
         <p>Q. 冥界ってなんですか？</p>
         <p>A. まめふたるの個人サイトです．</p>
       </section>
-      <section className={sec}>
-        <p>Q. 新しいフォルダ（？）を追加するときはどうするのですか？</p>
-        <p>
-          A.
-          フォルダツリーの構造はJSONで管理しています，フォルダを編集する場合はJSONをイジります．
-        </p>
-      </section>
+
       <section className={sec}>
         <p>Q. ドメインちゃんと維持できるんですか？</p>
         <p>A. しね．</p>
@@ -57,7 +51,7 @@ const page = ({ searchParams }: { searchParams: SearchParams }) => {
       <Link
         href={`/`}
         className={`${zenBold.className} ${backButton}`}
-        style={{ fontStyle: "italic" }}
+        style={{ fontStyle: "italic", overflow: "visible" }}
       >
         冥界
       </Link>
