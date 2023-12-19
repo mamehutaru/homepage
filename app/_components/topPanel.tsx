@@ -104,9 +104,12 @@ const responsiveHide = css({
 
 const imageMask = css({
   maskImage: "url('/mainImage.webp')",
+  WebkitMaskImage: "url('/mainImage.webp')",
   maskSize: "cover",
+  WebkitMaskSize: "cover",
   maskMode: "luminance",
   maskPosition: "bottom",
+  WebkitMaskPosition: "bottom",
 });
 
 const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
