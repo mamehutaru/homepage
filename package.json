@@ -16,6 +16,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.8.2",
     "@pandacss/dev": "^0.21.0",
     "@types/node": "^20",
     "@types/react": "^18",
