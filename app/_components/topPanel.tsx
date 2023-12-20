@@ -2,14 +2,7 @@ import TwitterSvg from "@/public/twitterSvg";
 import { css } from "@/styled-system/css";
 import ThemeToggleMoon from "./themeToggleButton";
 import { SearchParams } from "../lib/utils";
-import { Montserrat } from "next/font/google";
 import RonaldSvg from "@/public/ronaldSvg";
-
-const montserratItalic = Montserrat({
-  weight: "900",
-  style: "italic",
-  subsets: ["latin-ext"],
-});
 
 const topPanelWrapper = css({
   width: "100%",
@@ -33,7 +26,7 @@ const mainImagePanel = css({
   gridColumnEnd: "1",
   bg: "var(--bg-color)",
   overflow: "hidden",
-  height: "100%",
+  height: "50vw",
   "& span": {
     display: "block",
     fontStyle: "italic",
@@ -48,6 +41,7 @@ const mainImagePanel = css({
 const decorationPanel = css({
   display: "flex",
   bg: "var(--bg-color)",
+  height: "25vw",
   overflow: "hidden",
   "& svg": {
     width: "auto",
@@ -64,6 +58,7 @@ const linkPanel = css({
   backgroundImage: "radial-gradient(var(--theme-color) 1px, var(--bg-color) 0)",
   backgroundSize: "0.8rem 0.8rem",
   backgroundPosition: "center center",
+  height: "25vw",
 });
 
 const themeTogglePanel = css({
@@ -71,7 +66,7 @@ const themeTogglePanel = css({
   gridRowStart: "2",
   gridRowEnd: "4",
   textAlign: "center",
-
+  height: "50vw",
   backgroundImage:
     "linear-gradient(0deg, transparent 1rem, var(--theme-color) calc(1rem + 1px)), linear-gradient(90deg, var(--bg-color) 1rem, var(--theme-color) calc(1rem + 1px))",
   backgroundSize: "calc(1rem + 1px) calc(1rem + 1px)",
