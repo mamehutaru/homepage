@@ -42,6 +42,11 @@ const folderData: folderStructure[] = [
         type: "url",
         src: "https://tanatrium.net/",
       },
+      {
+        name: "ROCKETNEWS24 カンバ通信",
+        type: "url",
+        src: "https://rocketnews24.com/tag/%E3%82%AB%E3%83%B3%E3%83%90%E9%80%9A%E4%BF%A1/"
+      }
     ],
   },
 
