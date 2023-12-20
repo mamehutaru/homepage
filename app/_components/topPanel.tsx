@@ -13,9 +13,6 @@ const topPanelWrapper = css({
   columnGap: "2px",
   rowGap: "2px",
   bg: "var(--theme-color)",
-  "& div": {
-    //bg: "var(--bg-color)",
-  },
 });
 
 const mainImagePanel = css({
@@ -41,7 +38,7 @@ const mainImagePanel = css({
 const decorationPanel = css({
   display: "flex",
   bg: "var(--bg-color)",
-  height: "25vw",
+  height: "100%",
   overflow: "hidden",
   "& svg": {
     width: "auto",
@@ -66,7 +63,8 @@ const themeTogglePanel = css({
   gridRowStart: "2",
   gridRowEnd: "4",
   textAlign: "center",
-  height: "50vw",
+  height: "100%",
+  overflow: "hidden",
   backgroundImage:
     "linear-gradient(0deg, transparent 1rem, var(--theme-color) calc(1rem + 1px)), linear-gradient(90deg, var(--bg-color) 1rem, var(--theme-color) calc(1rem + 1px))",
   backgroundSize: "calc(1rem + 1px) calc(1rem + 1px)",

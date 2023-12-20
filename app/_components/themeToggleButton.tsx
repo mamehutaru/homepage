@@ -35,7 +35,8 @@ const ThemeToggleMoon = ({ searchParams }: { searchParams: SearchParams }) => {
       <Image
         src="/moonRotating.webp"
         alt={"rotating moon"}
-        fill
+        width={160}
+        height={160}
         className={moon}
       />
     </Link>
