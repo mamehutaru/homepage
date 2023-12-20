@@ -76,8 +76,12 @@ const ItemsContainer = ({ searchParams }: { searchParams: SearchParams }) => {
 
   const currentDirItems = searchCurrentDirItems(currentPath, folderData);
 
-  if (!currentDirItems) {
-    return <p>空なんすけど</p>;
+  if (!currentDirItems || currentDirItems.length === 0) {
+    return (
+      <p style={{ textAlign: "center", margin: "2rem" }}>
+        このフォルダは空です．
+      </p>
+    );
   }
 
   return (

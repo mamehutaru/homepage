@@ -41,6 +41,7 @@ const mainImagePanel = css({
     whiteSpace: "nowrap",
     marginLeft: "-8vw",
     marginTop: "-12vw",
+    zIndex: "1",
   },
 });
 
@@ -86,6 +87,7 @@ const linkItem = css({
   margin: "auto",
   borderRadius: "0.2rem",
   bg: "var(--bg-color)",
+
   _active: {
     transform: "scale(0.9)",
   },
@@ -102,21 +104,25 @@ const responsiveHide = css({
   display: [undefined, undefined, undefined, "none", "none"],
 });
 
-const imageMask = css({
-  maskImage: "url('/mainImage.webp')",
-  WebkitMaskImage: "url('/mainImage.webp')",
+const characterImage = css({
+  bg: "var(--theme-color)",
+  position: "absolute",
+  top: "0px",
+  zIndex: "2",
+  height: "100%",
+  width: "100%",
+  maskImage: "url('/mainImage.png')",
+  WebkitMaskImage: "url('/mainImage.png')",
   maskSize: "cover",
   WebkitMaskSize: "cover",
-  maskMode: "luminance",
-  maskPosition: "bottom",
-  WebkitMaskPosition: "bottom",
 });
 
 const TopPanel = ({ searchParams }: { searchParams: SearchParams }) => {
   return (
     <div className={`${topPanelWrapper} ${responsiveHide}`}>
-      <div className={`${mainImagePanel} ${imageMask} specialMask`}>
+      <div className={`${mainImagePanel}`}>
         <span>冥界</span>
+        <div className={characterImage}></div>
       </div>
 
       <div className={decorationPanel}>
