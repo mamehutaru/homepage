@@ -37,6 +37,7 @@ const page = ({ searchParams }: { searchParams: SearchParams }) => {
     right: "1.5rem",
     color: "var(--theme-color)",
     zIndex: "3",
+    width: "4rem",
   });
 
   return (
