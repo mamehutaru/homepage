@@ -20,6 +20,11 @@ const diary: imageData[] = [
     caption: "風邪",
     src: "D_20231201.webp",
   },
+  {
+    title: "12月の日記#2",
+    caption: "ジャンパーがペラすぎる。カツオ節のほうがまだ分厚い。",
+    src: "IMG_0583.webp"
+  }
 ];
 
 export default diary;
